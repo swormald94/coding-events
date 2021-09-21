@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("events");
+@RequestMapping("events")
 public class EventController {
 
     @GetMapping
@@ -21,7 +21,11 @@ public class EventController {
        events.add("SpringOne Platform");
        model.addAttribute("events", events);
        return "events/index";
+    }
 
+    @GetMapping("create")
+    public String renderCreateEventForm() {
+        return "events/create";
     }
 
 
